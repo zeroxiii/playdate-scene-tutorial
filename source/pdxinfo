@@ -1,7 +1,7 @@
-name=Game Name
-author=Author Name
-description=This is a Playdate game.
-bundleID=com.domain.GameName
+name=PlaydateSceneTutorial
+author=Rahmaan Lodhia
+description=This is a tutorial for making a scene manager in Playdate.
+bundleID=com.domain.PlaydateSceneTutorial
 version=1.0
 imagePath=system-assets
 buildNumber=1
