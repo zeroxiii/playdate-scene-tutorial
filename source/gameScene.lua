@@ -1,3 +1,5 @@
+import "gameOverScene"
+
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
@@ -11,7 +13,7 @@ function GameScene:init()
 
 	local playerSprite = gfx.image.new("images/player")
 	self.player = gfx.sprite.new(playerSprite)
-	self.player.moveTo(200, 120)
+	self.player:moveTo(200, 120)
 	self.player:add()
 
 	self.playerSpeed = 2
@@ -20,6 +22,9 @@ function GameScene:init()
 end
 
 function GameScene:update()
+	if pd.buttonJustPressed(pd.kButtonA) then
+		SCENE_MANAGER:switchScene(GameOverScene)
+	end
 	if pd.buttonIsPressed(pd.kButtonUp) then
 		self.player:moveBy(0, -self.playerSpeed)
 	end

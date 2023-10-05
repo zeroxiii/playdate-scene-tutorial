@@ -1,3 +1,5 @@
+import "gameScene"
+
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
@@ -7,7 +9,7 @@ function GameOverScene:init()
 	local text = "Game Over"
 	local gameOverImage = gfx.image.new(gfx.getTextSize(text))
 	gfx.pushContext(gameOverImage)
-		gfx.drawText(text, x, y)
+		gfx.drawText(text, 0, 0)
 	gfx.popContext()
 	local gameOverSprite = gfx.sprite.new(gameOverImage)
 	gameOverSprite:moveTo(200, 120)
@@ -17,5 +19,7 @@ function GameOverScene:init()
 end
 
 function GameOverScene:update()
-
+	if pd.buttonJustPressed(pd.kButtonA) then
+		SCENE_MANAGER:switchScene(GameScene)
+	end
 end
