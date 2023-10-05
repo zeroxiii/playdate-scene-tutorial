@@ -23,7 +23,7 @@ end
 
 function GameScene:update()
 	if pd.buttonJustPressed(pd.kButtonA) then
-		SCENE_MANAGER:switchScene(GameOverScene)
+		SCENE_MANAGER:switchScene(GameOverScene, "Score: 100")
 	end
 	if pd.buttonIsPressed(pd.kButtonUp) then
 		self.player:moveBy(0, -self.playerSpeed)
